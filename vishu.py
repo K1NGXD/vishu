@@ -8,7 +8,7 @@ browser = mechanize.Browser()
 browser.set_handle_robots(False)
 cookies = mechanize.CookieJar()
 browser.set_cookiejar(cookies)
-browser.addheaders = [('User-Agent': 'Mozilla/5.0 (Linux; Android 8.0.0; Samsung Galaxy S9 Build/OPR6.170623.017; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.125 Mobile Safari/537.36')]
+browser.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36')]
 browser.set_handle_refresh(False)
 
 url = 'https://m.facebook.com/login.php'
@@ -26,16 +26,16 @@ def sp(stri):
         sleep(0.03)
 
 logo =  """\033[1;37;1m     
-\033[1;37;1m  ##     ## #### ########  ##     ## ##     ## 
-\033[1;37;1m  ##     ##  ##  ##     ## ##     ## ##     ## 
-\033[1;37;1m  ##     ##  ##  ##     ## ##     ## ##     ## 
-\033[1;37;1m  ##     ##  ##  ########  ######### ##     ## 
-\033[1;37;1m   ##   ##   ##  ##     ## ##     ## ##     ## 
-\033[1;37;1m    ## ##    ##  ##     ## ##     ## ##     ## 
-\033[1;37;1m     ###    #### ########  ##     ##  #######  
+\033[1;37;1m  oo____oo_oooo__ooooo__oo____oo_oo______oo_
+\033[1;37;1m  oo____oo__oo__oo___oo_oo____oo_oo______oo_
+\033[1;37;1m  oo____oo__oo___oo_____oo____oo_oo______oo_
+\033[1;37;1m  _oo__oo___oo_____oo___oooooooo_oo______oo_
+\033[1;37;1m  __oooo____oo__oo___oo_oo____oo__oo____oo__
+\033[1;37;1m  ___oo____oooo__ooooo__oo____oo____oooo____
+__________________________________________  
 \033[1;37;1m-----------------------------------------------
-\033[1;37;1m  Author   : Vibhu
-\033[1;37;1m  Facebook : www.facebook.com/VIBHUX3TAIRA
+\033[1;37;1m  Author   : Vishu Rajput
+\033[1;37;1m  Facebook : www.facebook.com/100040365726070
 \033[1;37;1m  Virson   : 2.1.0
 \033[1;37;1m-----------------------------------------------"""
 
@@ -139,14 +139,14 @@ PASSWORD = str(input('[?] Enter : '))
 login()
 print("\033[1;34;40m", end = "")
 print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[?] Enter Chat Group/inbox Link\n")
+sp("\033[1;37;1m[?] Enter Chat/inbox Link\n")
 print(47*'\033[1;37;1m-')
 cid = str(input('\033[1;37;1m[?] Enter Link : '))
 curl = 'https://m.facebook.com/messages/t/' + str(cid)
 
 print("\033[1;34;40m", end = "")
 print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[?] Enter Notepad Loder/gali File Name\n")
+sp("\033[1;37;1m[?] Enter Notepad File Name\n")
 print(47*'\033[1;37;1m-')
 np = str(input('\033[1;37;1m[?] Enter File Name : '))
 f = open(np, 'r')
