@@ -1,5 +1,4 @@
 from urllib import response
-import mechanize
 import os
 import datetime
 import sys
