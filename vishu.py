@@ -25,38 +25,6 @@ def sp(stri):
         sys.stdout.flush()
         sleep(0.03)
 
-logo =  """\033[1;37;1m     
-\033[1;37;1m  oo____oo_oooo__ooooo__oo____oo_oo______oo_
-\033[1;37;1m  oo____oo__oo__oo___oo_oo____oo_oo______oo_
-\033[1;37;1m  oo____oo__oo___oo_____oo____oo_oo______oo_
-\033[1;37;1m  _oo__oo___oo_____oo___oooooooo_oo______oo_
-\033[1;37;1m  __oooo____oo__oo___oo_oo____oo__oo____oo__
-\033[1;37;1m  ___oo____oooo__ooooo__oo____oo____oooo____
-__________________________________________  
-\033[1;37;1m-----------------------------------------------
-\033[1;37;1m  Author   : Vishu Rajput
-\033[1;37;1m  Facebook : www.facebook.com/100040365726070
-\033[1;37;1m  Virson   : 2.1.0
-\033[1;37;1m-----------------------------------------------"""
-
-def menu():
-	os.system('clear')
-	print(logo)
-	print('[1] Random Uid Crack')
-	print('[2] Contact To Owner')
-	print('[0] Exit')
-	print(47*"-")
-	opt = input('[?] Choose : ')
-	if opt =='1':
-		md()
-	elif opt =='2':
-		Contact()
-	elif opt =='0':
-		exit()
-	else:
-		print('\n\033[1;31mChoose valid option\033[0;97m')
-		menu()
-
 def login():
     browser.open(url)
     browser.select_form(nr = 0)
@@ -68,10 +36,9 @@ def login():
     f.close()
     browser.select_form(nr = 0)
     print("\033[1;33;40m", end = "")
-    print(47*'\033[1;37;1m-')
-    sp("\033[1;37;1m[?] Enter the 2 factor code by google authenticator\n")
-    print(47*'\033[1;37;1m-')
-    apr = str(input('\033[1;37;1m[?] Enter Code : '))
+    sp("\nEnter the 2 factor code by google authenticator :\n")
+    print("\033[1;37;40m")
+    apr = str(input())
     try:
         browser.form['approvals_code'] = apr
     except mechanize._form_controls.ControlNotFoundError:
@@ -105,19 +72,19 @@ def findtextchat(curl):
         print("\nYour account is stuck on verification\nPlease do it and then re run the program.")
         exit(1)
     if x == "Epsilon":
-        print("\nYour account got locked, recover it kindly and re run the script.")
+        print("\nbhai tera khud gya.ja unlock kar")
         exit(1)
 
 def sendtextconvo(comment):
     try:
         browser.select_form(nr = 1)
     except mechanize._mechanize.FormNotFoundError:
-        print("Some error occured while finding text area, please check your account")
+        print("oh shit somthing worng on your account plz")
         exit(1)
     try:
         browser.form['body'] = comment
     except mechanize._form_controls.ControlNotFoundError:
-        print("Some error occured while filling text, please check your account")
+        print("hey bro something worong plz first you can login your account on mbaisc fb thanku any any problem then you contact vishu rajput")
         exit(1)
     r = browser.submit()
     e = datetime.datetime.now()
@@ -126,39 +93,34 @@ def sendtextconvo(comment):
     print(">>", line, "\n")
 
 print("\033[1;33;40m", end = "")
-os.system('clear')
-print(logo)
-sp("\033[1;37;1m[+] Login With Email/Number \n")
-print(47*'\033[1;37;1m-')
-USERNAME = str(input('[?] Enter Email/Number : '))
+sp("\nEnter your email :\n")
+print()
+print("\033[1;37;40m")
+USERNAME = str(input())
 print("\033[1;33;40m", end = "")
-print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[+] Enter Your Facebook Password\n")
-print(47*'\033[1;37;1m-')
-PASSWORD = str(input('[?] Enter : '))
+sp("\nEnter your password :\n")
+print("\033[1;37;40m")
+PASSWORD = str(input())
 login()
 print("\033[1;34;40m", end = "")
-print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[?] Enter Chat/inbox Link\n")
-print(47*'\033[1;37;1m-')
-cid = str(input('\033[1;37;1m[?] Enter Link : '))
+sp("Enter Convo or ib:\n")
+print("\033[1;37;40m")
+cid = str(input())
 curl = 'https://m.facebook.com/messages/t/' + str(cid)
 
 print("\033[1;34;40m", end = "")
-print(47*'\033[1;37;1m-')
-sp("\033[1;37;1m[?] Enter Notepad File Name\n")
-print(47*'\033[1;37;1m-')
-np = str(input('\033[1;37;1m[?] Enter File Name : '))
+sp("file dal de bhai notepade wali :")
+print("\033[1;37;40m")
+np = str(input())
 f = open(np, 'r')
 lines = f.readlines()
 f.close()
 print("\033[1;33;40m", end = "")
-sp("\033[1;37;1m[?] Enter The Time Delay In Seconds\n")
-print(47*'\033[1;37;1m-')
-t = int(input('\033[1;37;1m[?] Enter Time : '))
+sp("Enter the time delay in seconds :\n")
+print("\033[1;37;40m")
+t = int(input())
 
-os.system('clear')
-print(logo)
+clear()
 
 count = 0
 while True:
@@ -173,5 +135,4 @@ while True:
                 sleep(1)
                 clear()
                 print("\033[0;37;41m\n")
-               
                 
